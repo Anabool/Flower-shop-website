@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:3000/api/reviews';
+const API_URL = '/api/reviews';
 let rating = 0;
 
 // Проверяем, вошел ли админ (сохраняется в памяти браузера, пока вкладка открыта)
