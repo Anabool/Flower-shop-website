@@ -6,6 +6,8 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+app.use(express.static(__dirname));
+
 // Подключаем базу данных SQLite (файл создастся сам при первом запуске)
 const db = new sqlite3.Database('./database.db');
 
@@ -70,6 +72,10 @@ app.delete('/api/reviews/:id', (req, res) => {
         }
         res.json({ message: "Отзыв удален", changes: this.changes });
     });
+});
+
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/index.html');
 });
 
 const PORT = process.env.PORT || 3000;
