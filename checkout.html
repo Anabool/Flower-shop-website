@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оформление заказа — Флёр</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <nav class="nav">
+            <a href="index.html" class="logo">Флёр<span>.</span></a>
+            <ul class="nav-links">
+                <li><a href="flowers.html">Цветы</a></li>
+                <li><a href="compositions.html">Композиции</a></li>
+                <li><a href="calculator.html">Калькулятор</a></li>
+                <li><a href="feedback.html">Отзывы</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="checkout" style="max-width: 800px;">
+        <h2 class="section-title">Оформление заказа</h2>
+        <p class="section-sub">Заполните данные, чтобы мы доставили ваш букет</p>
+
+        <div class="calc-wrap">
+            <form id="checkoutForm">
+                <div class="calc-grid">
+                    <!-- Левая колонка -->
+                    <div>
+                        <h3 class="calc-block-title">Кому доставить</h3>
+                        <div class="field">
+                            <label>Ваше имя</label>
+                            <input type="text" id="clientName" required placeholder="Как к вам обращаться?">
+                        </div>
+                        <div class="field">
+                            <label>Телефон</label>
+                            <input type="tel" id="clientPhone" required placeholder="+375 (__) ___-__-__">
+                        </div>
+                        <div class="field">
+                            <label>Адрес доставки</label>
+                            <input type="text" id="clientAddress" required placeholder="Улица, дом, квартира">
+                        </div>
+                    </div>
+                    <!-- Правая колонка -->
+                    <div>
+                        <h3 class="calc-block-title">Время и дополнения</h3>
+                        <div class="field">
+                            <label>Дата доставки</label>
+                            <input type="date" id="deliveryDate" required>
+                        </div>
+                        <div class="field">
+                            <label>Время доставки</label>
+                            <select id="deliveryTime">
+                                <option value="09:00-12:00">Утро (09:00 – 12:00)</option>
+                                <option value="12:00-15:00">День (12:00 – 15:00)</option>
+                                <option value="15:00-18:00">Вечер (15:00 – 18:00)</option>
+                                <option value="18:00-21:00">Поздний вечер (18:00 – 21:00)</option>
+                            </select>
+                        </div>
+                        <div class="field"
+                            style="background: #fdfbf7; padding: 10px; border-radius: 8px; border: 1px solid #eee; margin-top: 15px;">
+                            <label
+                                style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-weight: normal; margin: 0;">
+                                <input type="checkbox" id="addCard"
+                                    style="width: 18px; height: 18px; accent-color: var(--sage);">
+                                <span>Добавить открытку <b>(+1 BYN)</b></span>
+                            </label>
+                        </div>
+                        <div class="field"
+                            style="background: #fdfbf7; padding: 10px; border-radius: 8px; border: 1px solid #eee;">
+                            <label
+                                style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-weight: normal; margin: 0;">
+                                <input type="checkbox" id="addSweets"
+                                    style="width: 18px; height: 18px; accent-color: var(--sage);">
+                                <span>Коробка конфет <b>(+5 BYN)</b></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="field" style="margin-top: 10px;">
+                    <label>Пожелания флористу (текст для открытки)</label>
+                    <textarea id="floristNote" placeholder="Например: С днём рождения, любимая!"></textarea>
+                </div>
+
+                <div id="checkoutSummary"
+                    style="margin-top: 30px; padding: 20px; background: #f8f4ed; border-radius: 12px; display: none;">
+                    <h3 style="color: var(--sage); margin-bottom: 10px; font-size: 18px;">Ваш заказ</h3>
+                    <div id="summaryItems" style="font-size: 14px; color: #555; margin-bottom: 15px;"></div>
+                    <div class="result-total" style="border-top: 2px solid var(--sage-light); padding-top: 10px;">
+                        <span>Итого к оплате:</span>
+                        <span id="finalTotal">0 BYN</span>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-rose"
+                    style="width: 100%; margin-top: 20px; padding: 16px; font-size: 18px;">Подтвердить заказ</button>
+            </form>
+        </div>
+    </section>
+
+    <div class="modal-overlay" id="successModal">
+        <div class="modal" style="text-align: center; padding: 40px;">
+            <div style="font-size: 60px; margin-bottom: 20px;">🌿</div>
+            <h2 style="color: var(--sage); margin-bottom: 15px;">Заказ оформлен!</h2>
+            <p style="color: #555; margin-bottom: 20px;">Мы получили ваш заказ. Наш менеджер свяжется с вами в ближайшее
+                время.</p>
+            <button class="btn" onclick="window.location.href='index.html'" style="width: 100%;">Вернуться на
+                главную</button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="logo">Флёр.</div>
+        <p>© 2025 Цветочная мастерская «Флёр».</p>
+    </footer>
+
+    <script src="js/common.js"></script>
+    <script src="js/checkout.js"></script>
+</body>
+
+</html>

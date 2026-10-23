@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор букета — Флёр</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <nav class="nav">
+            <a href="index.html" class="logo">Флёр<span>.</span></a>
+            <ul class="nav-links">
+                <li><a href="flowers.html">Цветы</a></li>
+                <li><a href="compositions.html">Композиции</a></li>
+                <li><a href="calculator.html">Калькулятор</a></li>
+                <li><a href="feedback.html">Отзывы</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="calculator">
+        <h2 class="section-title">Калькулятор букета</h2>
+        <p class="section-sub">Выберите цветы вручную или укажите бюджет и пожелания — мы подберем идеальный состав</p>
+
+        <div class="calc-wrap">
+            <div class="calc-grid">
+                <div class="calc-block">
+                    <h3>1. Цветы (необязательно)</h3>
+                    <p style="font-size: 13px; color: #777; margin-bottom: 15px;">Оставьте пустым, если хотите, чтобы мы
+                        сами собрали букет по бюджету.</p>
+                    <div id="flowerPicker"></div>
+                </div>
+
+                <div class="calc-block">
+                    <h3>2. Оформление</h3>
+                    <div class="field">
+                        <label>Упаковка</label>
+                        <select id="wrapping">
+                            <option data-price="0">Без упаковки — 0 BYN</option>
+                            <option data-price="5" selected>Крафт-бумага — 5 BYN</option>
+                            <option data-price="7">Матовая плёнка — 7 BYN</option>
+                            <option data-price="6">Сетка — 6 BYN</option>
+                            <option data-price="9">Дизайнерская бумага — 9 BYN</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label>Лента</label>
+                        <select id="ribbon">
+                            <option data-price="0">Без ленты — 0 BYN</option>
+                            <option data-price="2" selected>Атласная белая — 2 BYN</option>
+                            <option data-price="2">Атласная розовая — 2 BYN</option>
+                            <option data-price="3">Джутовая — 3 BYN</option>
+                        </select>
+                    </div>
+
+                    <h3 style="margin-top:28px;">3. Бюджет и пожелания</h3>
+                    <div class="field">
+                        <label>Бюджет (BYN)</label>
+                        <input type="number" id="budget" placeholder="Например, 50">
+                    </div>
+                    <div class="field">
+                        <label>Пожелания</label>
+                        <textarea id="wishes" placeholder="Например: без роз, с тюльпанами, бюджет 70 BYN"></textarea>
+                    </div>
+
+                    <button class="btn btn-rose" id="calcBtn" style="width:100%;margin-top:10px;">Рассчитать
+                        букет</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- МОДАЛЬНОЕ ОКНО ДЛЯ РЕЗУЛЬТАТА -->
+    <div class="modal-overlay" id="resultModal">
+        <div class="modal" style="max-width: 550px; padding: 0;">
+            <button class="modal-close" onclick="closeResultModal()" aria-label="Закрыть">&times;</button>
+            <div id="result" style="padding: 30px;"></div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="logo">Флёр.</div>
+        <p>© 2025 Цветочная мастерская «Флёр».</p>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/calculator.js"></script>
+</body>
+
+</html>

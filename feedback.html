@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Обратная связь — Флёр</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <nav class="nav">
+            <a href="index.html" class="logo">Флёр<span>.</span></a>
+            <ul class="nav-links">
+                <li><a href="flowers.html">Цветы</a></li>
+                <li><a href="compositions.html">Композиции</a></li>
+                <li><a href="calculator.html">Калькулятор</a></li>
+                <li><a href="feedback.html">Отзывы</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="feedback">
+        <h2 class="section-title">Обратная связь</h2>
+        <p class="section-sub">Поделитесь впечатлениями — нам важно ваше мнение</p>
+
+        <div class="feedback-wrap">
+            <form id="feedbackForm">
+                <div class="field">
+                    <label>Ваше имя</label>
+                    <input type="text" required placeholder="Как к вам обращаться?">
+                </div>
+                <div class="field">
+                    <label>Email или телефон</label>
+                    <input type="text" required placeholder="Для связи с вами">
+                </div>
+                <label style="font-size:14px;color:#555;display:block;margin-bottom:6px;">Оценка</label>
+                <div class="stars" id="stars">
+                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
+                <div class="field">
+                    <label>Сообщение</label>
+                    <textarea required placeholder="Что вам понравилось, что можно улучшить?"></textarea>
+                </div>
+                <button type="submit" class="btn" style="width:100%;">Отправить</button>
+            </form>
+        </div>
+
+        <!-- БЛОК ДЛЯ ОТОБРАЖЕНИЯ ОТЗЫВОВ -->
+        <div style="margin-top: 60px;">
+            <div style="display: flex; justify-content: center; align-items: center; gap: 15px; margin-bottom: 20px;">
+                <h3 class="section-title" style="font-size: 28px; margin: 0;">Что о нас говорят</h3>
+
+                <!-- ВОТ ЭТА КНОПКА -->
+                <button id="adminLoginBtn" onclick="adminLogin()"
+                    style="background: none; border: 1px solid #ccc; padding: 5px 10px; border-radius: 5px; font-size: 12px; cursor: pointer; color: #777;">Вход
+                    для админа</button>
+            </div>
+
+            <div id="reviewsList" style="max-width: 800px; margin: 0 auto;">
+                <p style="text-align: center; color: #777;">Загрузка отзывов...</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="logo">Флёр.</div>
+        <p>© 2025 Цветочная мастерская «Флёр».</p>
+    </footer>
+
+    <script src="js/common.js"></script>
+    <script src="js/feedback.js"></script>
+</body>
+
+</html>

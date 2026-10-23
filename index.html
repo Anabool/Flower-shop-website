@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Цветочная мастерская «Флёр»</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <nav class="nav">
+            <a href="index.html" class="logo">Флёр<span>.</span></a>
+            <ul class="nav-links">
+                <li><a href="flowers.html">Цветы</a></li>
+                <li><a href="compositions.html">Композиции</a></li>
+                <li><a href="calculator.html">Калькулятор</a></li>
+                <li><a href="feedback.html">Отзывы</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ОБНОВЛЕННЫЙ ГЛАВНЫЙ БЛОК С КАРТИНКОЙ -->
+    <section class="hero-split">
+        <div class="hero-text">
+            <h1>Цветы с душой</h1>
+            <p>Свежие цветы и авторские композиции. Соберите свой идеальный букет прямо на сайте — или доверьтесь нашим
+                флористам.</p>
+            <a href="calculator.html" class="btn">Собрать букет</a>
+        </div>
+        <div class="hero-image">
+            <!-- Здесь используется твоя картинка пиона или розы -->
+            <img src="images/tulip-parrot.jpg" alt="Цветы" onerror="this.style.display='none'">
+        </div>
+    </section>
+
+    <!-- БЛОК ПОЧЕМУ МЫ (ПРЕИМУЩЕСТВА) -->
+    <section class="features-strip">
+        <div class="feature-item">
+            <h3>Свежесть</h3>
+            <p>Срезы каждое утро от проверенных поставщиков</p>
+        </div>
+        <div class="feature-item">
+            <h3>Забота</h3>
+            <p>Бережно упакуем и доставим точно в срок</p>
+        </div>
+        <div class="feature-item">
+            <h3>Дизайн</h3>
+            <p>Авторские букеты, которые не стыдно подарить</p>
+        </div>
+    </section>
+
+    <!-- БЛОК ПОПУЛЯРНЫЕ БУКЕТЫ (ХИТЫ) -->
+    <section class="popular-section">
+        <h2 class="section-title">Популярные композиции</h2>
+        <p class="section-sub">Самые любимые букеты наших клиентов</p>
+  
+  <!-- Сюда будут подгружаться 4 карточки -->
+  <div class="grid" id="popularGrid"></div>
+
+<div style="text-align: center; margin-top: 40px; margin-bottom: 80px;">
+    <a href="compositions.html" class="btn btn-rose">Смотреть все композиции</a>
+</div>
+</section>
+
+<!-- ... остальной код ... -->
+
+<!-- Модальное окно для букетов на главной -->
+<div class="modal-overlay" id="compositionModal">
+  <div class="modal" id="compositionModalContent"></div>
+</div>
+
+
+
+    <footer>
+        <div class="logo">Флёр.</div>
+        <p>© 2025 Цветочная мастерская «Флёр». Сделано с любовью к цветам.</p>
+    </footer>
+
+    <script src="js/common.js"></script>
+    <!-- ДОБАВЬ ЭТИ ТРИ СКРИПТА ПЕРЕД ЗАКРЫВАЮЩИМ ТЕГОМ </body> -->
+    <script src="js/data.js"></script>
+    <script src="js/catalog.js"></script>
+    <script src="js/common.js"></script>
+    </body>
+    
+    </html>
+</body>
+
+</html>

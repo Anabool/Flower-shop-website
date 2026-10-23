@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Цветы — Флёр</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <nav class="nav">
+            <a href="index.html" class="logo">Флёр<span>.</span></a>
+            <ul class="nav-links">
+                <li><a href="flowers.html">Цветы</a></li>
+                <li><a href="compositions.html">Композиции</a></li>
+                <li><a href="calculator.html">Калькулятор</a></li>
+                <li><a href="feedback.html">Отзывы</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="flowers">
+        <h2 class="section-title">Цветы поштучно</h2>
+        <p class="section-sub">Кликните на цветок, чтобы узнать откуда он и как за ним ухаживать</p>
+
+        <div class="filter-panel">
+            <div class="filter-group search-group">
+                <label>Поиск по названию</label>
+                <input type="text" id="searchInput" placeholder="Например, Роза...">
+            </div>
+            <div class="filter-group">
+                <label>Цвет (можно несколько)</label>
+                <div class="checkbox-grid">
+                    <label><input type="checkbox" class="filter-color" value="красный"> Красный</label>
+                    <label><input type="checkbox" class="filter-color" value="розовый"> Розовый</label>
+                    <label><input type="checkbox" class="filter-color" value="белый"> Белый</label>
+                    <label><input type="checkbox" class="filter-color" value="жёлтый"> Жёлтый</label>
+                    <label><input type="checkbox" class="filter-color" value="оранжевый"> Оранжевый</label>
+                    <label><input type="checkbox" class="filter-color" value="синий"> Синий</label>
+                    <label><input type="checkbox" class="filter-color" value="голубой"> Голубой</label>
+                    <label><input type="checkbox" class="filter-color" value="фиолетовый"> Фиолетовый</label>
+                    <label><input type="checkbox" class="filter-color" value="зелёный"> Зелёный</label>
+                </div>
+            </div>
+            <div class="filter-group">
+                <label>Цена (BYN)</label>
+                <div class="checkbox-grid">
+                    <label><input type="checkbox" class="filter-price" value="cheap"> До 5 BYN</label>
+                    <label><input type="checkbox" class="filter-price" value="medium"> 5–10 BYN</label>
+                    <label><input type="checkbox" class="filter-price" value="expensive"> Дороже 10 BYN</label>
+                </div>
+            </div>
+            <div class="filter-actions">
+                <div class="filter-group" style="flex:1;">
+                    <label>Сортировка</label>
+                    <select id="sortSelect">
+                        <option value="default">По умолчанию</option>
+                        <option value="price-asc">Сначала дешевые</option>
+                        <option value="price-desc">Сначала дорогие</option>
+                    </select>
+                </div>
+                <button class="btn" id="resetFilters" style="padding: 10px 20px; font-size: 14px;">Сбросить всё</button>
+            </div>
+        </div>
+        <div class="grid" id="flowersGrid"></div>
+        <div id="noResults" style="display:none; text-align:center; color:#7a7a7a; padding: 40px; font-size: 18px;">По
+            вашему запросу ничего не найдено 🌸</div>
+    </section>
+
+    <div class="modal-overlay" id="flowerModal">
+        <div class="modal" id="modalContent"></div>
+    </div>
+
+    <footer>
+        <div class="logo">Флёр.</div>
+        <p>© 2025 Цветочная мастерская «Флёр».</p>
+    </footer>
+    <script src="js/data.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/catalog.js"></script>
+</body>
+
+</html>
