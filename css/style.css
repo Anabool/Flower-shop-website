@@ -749,3 +749,78 @@ footer .logo {
         grid-template-columns: 1fr;
     }
 }
+/* ==================== АДАПТАЦИЯ ПОД ТЕЛЕФОНЫ ==================== */
+@media (max-width: 768px) {
+    /* 1. Шапка сайта */
+    .nav {
+        flex-direction: column; /* Логотип сверху, меню снизу */
+        gap: 15px;
+        padding: 15px;
+    }
+    .nav-links {
+        flex-wrap: wrap; /* Ссылки переносятся на новую строку, если не влезают */
+        justify-content: center;
+        gap: 15px;
+        font-size: 14px;
+    }
+
+    /* 2. Главный блок (текст и картинка) */
+    .hero-split {
+        flex-direction: column; /* Ставим картинку под текст */
+        text-align: center;
+        padding: 40px 20px;
+        gap: 30px;
+    }
+    .hero-text {
+        padding: 30px 20px;
+    }
+    .hero-text h1 {
+        font-size: 36px; /* Уменьшаем заголовок */
+    }
+    .hero-text p {
+        margin: 0 auto 20px;
+    }
+    .hero-image {
+        width: 100%;
+        max-width: 300px;
+        height: 400px;
+        margin: 0 auto;
+    }
+
+    /* 3. Блок преимуществ */
+    .features-strip {
+        grid-template-columns: 1fr; /* В один столбик */
+        padding: 30px 20px;
+    }
+
+    /* 4. Сетки карточек (цветы, популярные букеты) */
+    .grid, #popularGrid {
+        grid-template-columns: 1fr; /* Карточки в один столбик */
+    }
+    .card-image {
+        height: 250px; /* Картинки повыше */
+    }
+
+    /* 5. Калькулятор, фильтры и оформление заказа */
+    .calc-grid, .filter-panel {
+        grid-template-columns: 1fr; /* Колонки встают друг под друга */
+    }
+    .calc-wrap {
+        padding: 20px; /* Уменьшаем отступы внутри блоков */
+    }
+
+    /* 6. Всплывающие окна (модалки) */
+    .modal {
+        width: 95%;
+        max-height: 85vh;
+    }
+    .modal-hero {
+        height: 200px;
+    }
+    .modal-body {
+        padding: 20px;
+    }
+    .modal-body h2 {
+        font-size: 26px;
+    }
+}
